@@ -1,24 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Bài 5 - Result Controller</title>
+    <title>A Page</title>
 </head>
 <body>
-<h1>Bài 5: Result Controller - Page A</h1>
-
-<h2 th:text="${message}">Message from Model</h2>
-
-<h2 th:text="${param.message}">Message from URL Parameter</h2>
-
-<div>
-    <h3>Test các endpoint:</h3>
-    <ul>
-        <li><a href="/a">/a - Trang hiện tại</a></li>
-        <li><a href="/b">/b - Chuyển hướng với Model</a></li>
-        <li><a href="/c">/c - Chuyển hướng với RedirectAttributes</a></li>
-        <li><a href="/d">/d - Trả về nội dung trực tiếp</a></li>
-    </ul>
-</div>
+    <h1 th:text="${message}">Message Model</h1>
+    <h1 th:text="${param.message}">Message Redirect</h1>
 </body>
 </html>

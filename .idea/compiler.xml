@@ -8,23 +8,36 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Lab1" />
+        <module name="Lab2" />
         <module name="Lab3" />
+        <module name="lab2" />
       </profile>
-      <profile name="Annotation profile for Lab2" enabled="true">
+      <profile name="Annotation profile for Lab5" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
+        </processorPath>
+        <module name="Lab5" />
+      </profile>
+      <profile name="Annotation profile for Lab8" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
         </processorPath>
-        <module name="Lab2" />
         <module name="Lab4" />
-        <module name="Lab5" />
         <module name="Lab6" />
         <module name="Lab7" />
         <module name="Lab8" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Lab2" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -36,6 +49,7 @@
       <module name="Lab6" options="-parameters" />
       <module name="Lab7" options="-parameters" />
       <module name="Lab8" options="-parameters" />
+      <module name="lab2" options="-parameters" />
     </option>
   </component>
 </project>
