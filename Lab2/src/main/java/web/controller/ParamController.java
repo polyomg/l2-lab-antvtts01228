@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import web.entity.Product;
 
 @Controller
-public class ParamController {
+public class
+ParamController {
 
     @RequestMapping("/param/form")
     public String form(Model model) {
