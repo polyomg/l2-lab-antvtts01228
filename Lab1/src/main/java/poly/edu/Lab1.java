@@ -1,11 +1,13 @@
-package com.poly.lab2;
+package poly.edu;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Lab2Application {
+public class Lab1 {
+
     public static void main(String[] args) {
-        SpringApplication.run(Lab2Application.class, args);
+        SpringApplication.run(Lab1.class, args);
     }
+
 }
