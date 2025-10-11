@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="form">
+    <form th:action="@{/category/create}" method="post">
+        <div>
+            <label>ID:</label>
+            <input type="text" name="id" th:value="${item.id}">
+        </div>
+        <div>
+            <label>Name:</label>
+            <input type="text" name="name" th:value="${item.name}">
+        </div>
+        <div>
+            <button formaction="/category/create">Create</button>
+            <button formaction="/category/update">Update</button>
+            <a href="/category/index">Reset</a>
+        </div>
+    </form>
+</th:block>
+</body>
+</html>

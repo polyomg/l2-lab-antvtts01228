@@ -10,17 +10,11 @@
         <module name="Lab1" />
         <module name="Lab2" />
         <module name="Lab3" />
+        <module name="Lab4" />
+        <module name="lab4" />
         <module name="lab2" />
-      </profile>
-      <profile name="Annotation profile for Lab5" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
-        </processorPath>
         <module name="Lab5" />
+        <module name="Lab6" />
       </profile>
       <profile name="Annotation profile for Lab8" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -29,14 +23,14 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
         </processorPath>
-        <module name="Lab4" />
-        <module name="Lab6" />
         <module name="Lab7" />
         <module name="Lab8" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Lab2" target="21" />
+      <module name="lab2 (1)" target="21" />
+      <module name="Lab4" target="23" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -44,12 +38,14 @@
       <module name="Lab1" options="-parameters" />
       <module name="Lab2" options="-parameters" />
       <module name="Lab3" options="-parameters" />
-      <module name="Lab4" options="-parameters" />
+      <module name="Lab4" options="" />
       <module name="Lab5" options="-parameters" />
       <module name="Lab6" options="-parameters" />
       <module name="Lab7" options="-parameters" />
       <module name="Lab8" options="-parameters" />
       <module name="lab2" options="-parameters" />
+      <module name="lab2 (1)" options="-parameters" />
+      <module name="lab4" options="-parameters" />
     </option>
   </component>
 </project>
