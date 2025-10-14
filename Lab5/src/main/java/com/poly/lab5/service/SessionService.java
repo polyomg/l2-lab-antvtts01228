@@ -9,6 +9,7 @@ public class SessionService {
     @Autowired
     HttpSession session;
 
+    @SuppressWarnings("unchecked")
     public <T> T get(String name) {
         return (T) session.getAttribute(name);
     }

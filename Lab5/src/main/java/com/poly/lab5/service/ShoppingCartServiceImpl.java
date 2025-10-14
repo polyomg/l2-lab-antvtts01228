@@ -4,7 +4,6 @@ import com.poly.lab5.model.DB;
 import com.poly.lab5.model.Item;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
-
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,19 +11,17 @@ import java.util.Map;
 @SessionScope
 @Service
 public class ShoppingCartServiceImpl implements ShoppingCartService {
-
     Map<Integer, Item> map = new HashMap<>();
 
     @Override
     public Item add(Integer id) {
-        Item item = DB.items.get(id);
-        if (item != null) {
-            Item existing = map.get(id);
-            if (existing == null) {
-                map.put(id, new Item(item.getId(), item.getName(), item.getPrice(), 1));
-            } else {
-                existing.setQty(existing.getQty() + 1);
-            }
+        Item item = map.get(id);
+        if (item == null) {
+            item = DB.items.get(id);
+            item.setQty(1);
+            map.put(id, item);
+        } else {
+            item.setQty(item.getQty() + 1);
         }
         return item;
     }
@@ -37,9 +34,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Override
     public Item update(Integer id, int qty) {
         Item item = map.get(id);
-        if (item != null) {
-            item.setQty(qty);
-        }
+        if (item != null) item.setQty(qty);
         return item;
     }
 
@@ -60,6 +55,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Override
     public double getAmount() {
-        return map.values().stream().mapToDouble(i -> i.getPrice() * i.getQty()).sum();
+        return map.values().stream()
+                .mapToDouble(i -> i.getPrice() * i.getQty())
+                .sum();
     }
 }

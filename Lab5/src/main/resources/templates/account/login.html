@@ -2,27 +2,29 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Đăng nhập</title>
+    <title>Đăng nhập có Remember Me + Upload Ảnh</title>
 </head>
 <body>
-<h2>Form Đăng Nhập</h2>
 
-<form action="/account/login" method="post">
-    <label>Tên đăng nhập:</label>
-    <input type="text" name="username" placeholder="Nhập username"><br><br>
+<h2>Form Đăng nhập </h2>
 
-    <label>Mật khẩu:</label>
-    <input type="password" name="password" placeholder="Nhập password"><br><br>
-
-    <label>
-        <input type="checkbox" name="remember" value="true"> Ghi nhớ đăng nhập
-    </label><br><br>
-
+<form action="/account/login" method="post" enctype="multipart/form-data">
+    <p>Username: <input type="text" name="username" th:value="${username}" required></p>
+    <p>Password: <input type="password" name="password" required></p>
+    <p>Remember me: <input type="checkbox" name="remember" th:checked="${remember}"></p>
+    <p>Chọn ảnh đại diện: <input type="file" name="photo_file"></p>
     <button type="submit">Đăng nhập</button>
 </form>
 
-<!-- Hiển thị thông báo -->
-<p th:text="${message}" style="color:blue;"></p>
+<hr>
+
+<p th:text="${message}"></p>
+
+<div th:if="${photo}">
+    <h3>Ảnh vừa upload:</h3>
+    <!-- Dẫn từ resources/uploads/ -->
+    <img th:src="@{'/uploads/' + ${photo}}" width="200">
+</div>
 
 </body>
 </html>

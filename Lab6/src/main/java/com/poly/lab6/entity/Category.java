@@ -2,7 +2,6 @@ package com.poly.lab6.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
 import java.io.Serializable;
 import java.util.List;
 

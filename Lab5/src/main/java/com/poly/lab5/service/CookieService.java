@@ -15,13 +15,10 @@ public class CookieService {
 
     public Cookie get(String name) {
         Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (Cookie c : cookies) {
-                if (c.getName().equalsIgnoreCase(name)) {
+        if (cookies != null)
+            for (Cookie c : cookies)
+                if (c.getName().equalsIgnoreCase(name))
                     return c;
-                }
-            }
-        }
         return null;
     }
 
@@ -39,9 +36,11 @@ public class CookieService {
     }
 
     public void remove(String name) {
-        Cookie cookie = new Cookie(name, "");
-        cookie.setMaxAge(0);
-        cookie.setPath("/");
-        response.addCookie(cookie);
+        Cookie cookie = get(name);
+        if (cookie != null) {
+            cookie.setMaxAge(0);
+            cookie.setPath("/");
+            response.addCookie(cookie);
+        }
     }
 }

@@ -1,9 +1,10 @@
-<table border="1" style="width:100%">
+<h2>Giỏ hàng</h2>
+<table border="1" width="100%">
     <tr>
         <th>Id</th>
         <th>Name</th>
         <th>Price</th>
-        <th>Quantity</th>
+        <th>Qty</th>
         <th>Amount</th>
         <th></th>
     </tr>
@@ -18,5 +19,8 @@
         </form>
     </tr>
 </table>
+
+<p><b>Tổng tiền:</b> <span th:text="${cart.amount}"></span></p>
+
 <a href="/cart/clear">Clear Cart</a> |
-<a href="/item/index">Add more</a>
+<a href="/item/index">Add More</a>

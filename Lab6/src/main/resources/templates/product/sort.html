@@ -6,6 +6,7 @@
 </head>
 <body>
 <h3>SORTING BY <span th:text="${field}"></span></h3>
+
 <table border="1" style="width:100%">
     <tr>
         <th><a href="/product/sort?field=id">Id</a></th>
@@ -13,7 +14,7 @@
         <th><a href="/product/sort?field=price">Price</a></th>
         <th><a href="/product/sort?field=createDate">Date</a></th>
     </tr>
-    <th:block th:each="item: ${items}">
+    <th:block th:each="item : ${items}">
         <tr>
             <td th:text="${item.id}"></td>
             <td th:text="${item.name}"></td>

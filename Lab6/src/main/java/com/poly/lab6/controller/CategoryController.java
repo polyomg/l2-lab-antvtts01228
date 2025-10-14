@@ -14,7 +14,6 @@ public class CategoryController {
     @Autowired
     CategoryDAO dao;
 
-    // Trang danh sách + form
     @RequestMapping("/category/index")
     public String index(Model model) {
         Category item = new Category();
@@ -24,7 +23,6 @@ public class CategoryController {
         return "category/index";
     }
 
-    // Chỉnh sửa
     @RequestMapping("/category/edit/{id}")
     public String edit(Model model, @PathVariable("id") String id) {
         Category item = dao.findById(id).orElse(new Category());
@@ -34,21 +32,18 @@ public class CategoryController {
         return "category/index";
     }
 
-    // Tạo mới
-    @RequestMapping("/category/create")
+    @PostMapping("/category/create")
     public String create(Category item) {
         dao.save(item);
         return "redirect:/category/index";
     }
 
-    // Cập nhật
-    @RequestMapping("/category/update")
+    @PostMapping("/category/update")
     public String update(Category item) {
         dao.save(item);
         return "redirect:/category/edit/" + item.getId();
     }
 
-    // Xóa
     @RequestMapping("/category/delete/{id}")
     public String delete(@PathVariable("id") String id) {
         dao.deleteById(id);

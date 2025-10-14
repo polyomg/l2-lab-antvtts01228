@@ -2,7 +2,6 @@ package com.poly.lab6.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
 import java.io.Serializable;
 
 @Data
@@ -12,7 +11,6 @@ public class OrderDetail implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-
     Double price;
     Integer quantity;
 
