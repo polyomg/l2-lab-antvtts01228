@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="form">
+    <form method="post">
+        <div>
+            <label>ID:</label>
+            <input type="text" name="id" th:value="${item.id}">
+        </div>
+        <div>
+            <label>Name:</label>
+            <input type="text" name="name" th:value="${item.name}">
+        </div>
+        <div>
+            <button formaction="/category/create">Create</button>
+            <button formaction="/category/update">Update</button>
+            <a href="/category/index">Reset</a>
+            <button type="submit" formaction="/category/delete"
+                    onclick="return confirm('Bạn có chắc muốn xóa loại hàng này không?');">
+                Delete
+            </button>
+        </div>
+    </form>
+</th:block>
+</body>
+</html>

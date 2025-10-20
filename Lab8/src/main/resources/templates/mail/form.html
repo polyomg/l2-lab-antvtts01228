@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gửi Mail</title>
+</head>
+<body>
+<h2>Form Gửi Email</h2>
+<form th:action="@{/mail/send}" method="post">
+    <label>Người nhận:</label>
+    <input type="email" name="to" required><br>
+    <label>Tiêu đề:</label>
+    <input type="text" name="subject" required><br>
+    <label>Nội dung:</label><br>
+    <textarea name="body" rows="5" cols="30"></textarea><br>
+    <button type="submit">Gửi</button>
+</form>
+<p th:text="${message}"></p>
+<a href="/auth/logout">Đăng xuất</a>
+</body>
+</html>
