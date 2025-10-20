@@ -15,14 +15,6 @@
         <module name="lab2" />
         <module name="Lab5" />
         <module name="Lab6" />
-      </profile>
-      <profile name="Annotation profile for Lab8" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
-        </processorPath>
         <module name="Lab7" />
         <module name="Lab8" />
       </profile>
@@ -41,7 +33,7 @@
       <module name="Lab4" options="" />
       <module name="Lab5" options="-parameters" />
       <module name="Lab6" options="-parameters" />
-      <module name="Lab7" options="-parameters" />
+      <module name="Lab7" options="" />
       <module name="Lab8" options="-parameters" />
       <module name="lab2" options="-parameters" />
       <module name="lab2 (1)" options="-parameters" />

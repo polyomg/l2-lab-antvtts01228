@@ -17,7 +17,7 @@ public class ProductController {
     @Autowired
     ProductDAO dao;
 
-    // ✅ SẮP XẾP
+    //  SẮP XẾP
     @RequestMapping("/product/sort")
     public String sort(Model model, @RequestParam("field") Optional<String> field) {
         Sort sort = Sort.by(Sort.Direction.DESC, field.orElse("price"));
@@ -27,7 +27,7 @@ public class ProductController {
         return "product/sort";
     }
 
-    // ✅ PHÂN TRANG
+    //  PHÂN TRANG
     @RequestMapping("/product/page")
     public String paginate(Model model, @RequestParam("p") Optional<Integer> p) {
         Pageable pageable = PageRequest.of(p.orElse(0), 5);
